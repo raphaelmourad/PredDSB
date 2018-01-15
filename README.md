@@ -17,7 +17,7 @@ To run the script, you need several R packages. To install the packages:
 `biocLite("TFBSTools")` \
 `biocLite("DNAshapeR")` \
 `biocLite("rtracklayer")` \
-`biocLite("Biostrings")` \
+`biocLite("Biostrings")` 
 
 **Usage**
 
