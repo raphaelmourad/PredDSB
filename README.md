@@ -1,7 +1,4 @@
-# Raphael Mourad
-# University Paul Sabatier, France
-# raphael.mourad@ibcg.biotoul.fr
-# 15/01/2018
+# Predicting double-strand DNA breaks using epigenome marks or DNA at kilobase resolution
 
 
 # Data and R scripts to predict double-strand DNA breaks (DSBs) from epigenomic and chromatin data, from DNA motif occurrence data, or from DNA motif occurrence and DNA shape data. 
@@ -24,16 +21,14 @@ biocLite("DNAshapeR")
 biocLite("rtracklayer")
 biocLite("Biostrings")
 
-
-
 # To predict DSBs in NHEK cells, run the R script predictDSB.R. 
 
 # To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predictDSB.R. 
 
-
-References:
+Reference:
 - Stefanie V. Lensing, Giovanni Marsico, Robert Hansel-Hertsch, Enid Y. Lam, David Tannahill, and
 Shankar Balasubramanian. DSBCapture: in situ capture and sequencing of DNA breaks. Nature
 Methods, 13(10):855–857, August 2016.
 
-
+Contact:
+raphael.mourad@ibcg.biotoul.fr
