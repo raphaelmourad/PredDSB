@@ -9,7 +9,7 @@ We devised a computational approach to predict DSBs using the epigenomic and chr
 The scripts were written in R language. 
 
 To run the script, you need several R packages. To install the packages:
-install.packages(c("pROC","glmnet","ranger","Matrix","gkmSVM"))
+`install.packages(c("pROC","glmnet","ranger","Matrix","gkmSVM"))
 source("https://bioconductor.org/biocLite.R")
 biocLite("BSgenome.Hsapiens.UCSC.hg19")
 biocLite("BSgenome.Hsapiens.UCSC.hg19.masked")
@@ -17,7 +17,7 @@ biocLite("JASPAR2016")
 biocLite("TFBSTools")
 biocLite("DNAshapeR")
 biocLite("rtracklayer")
-biocLite("Biostrings")
+biocLite("Biostrings")`
 
 **Usage**
 
