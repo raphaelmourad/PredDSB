@@ -31,6 +31,7 @@ To predict DSBs in NHEK cells, run the R script predictDSB.R.
 To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predictDSB.R. 
 
 **Information about the data**
+
 Note that DSB data provided are from Lensing et al. (Nature Methods, 2016). Here data only comprise 20.000 DSBs which are a subset of the 84.946 DSBs detected by DSBCapture in order to reduce computational burden for predictions. But, in the article, all DSB sites were used. That explains why prediction performances when using this code are lower than in the article, especially for DNA motif occurrence-based predictions, and DNA motif occurrence and DNA shape-based predictions. 
 
 **References**
