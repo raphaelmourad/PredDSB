@@ -35,7 +35,6 @@ To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predi
 Note that DSB data provided are from Lensing et al. (Nature Methods, 2016). Here data only comprise 20.000 DSBs which are a subset of the 84.946 DSBs detected by DSBCapture in order to reduce computational burden for predictions. But, in the article, all DSB sites were used. That explains why prediction performances when using this code are lower than in the article, especially for DNA motif occurrence-based predictions, and DNA motif occurrence and DNA shape-based predictions. 
 
 **References**
-- Raphael Mourad and Olivier Cuvier. TAD-free analysis of architectural proteins and insulators. Nucleic Acids Research, gkx1246, December 2017.
 - Stefanie V. Lensing, Giovanni Marsico, Robert Hansel-Hertsch, Enid Y. Lam, David Tannahill, and Shankar Balasubramanian. DSBCapture: in situ capture and sequencing of DNA breaks. Nature Methods, 13(10):855–857, August 2016.
 
 **Contact**:
