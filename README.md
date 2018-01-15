@@ -28,7 +28,7 @@ There are three main folders:
 
 To predict DSBs in NHEK cells, run the R script predictDSB.R. 
 
-To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predictDSB.R. 
+To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predictDSBU2OS.R. 
 
 **Information about the data**
 
