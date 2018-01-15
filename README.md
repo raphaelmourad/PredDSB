@@ -1,5 +1,7 @@
 # Predicting double-strand DNA breaks using epigenome marks or DNA at kilobase resolution
 
+![alt text](https://github.com/morphos30/PredDSB/blob/master/predDSB.png)
+
 **Overview**
 
 We devised a computational approach to predict double-strand DNA breaks (DSBs) using the epigenomic and chromatin context, but also using DNA motifs and DNA shape.
