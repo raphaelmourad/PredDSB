@@ -8,7 +8,7 @@ We devised a computational approach to predict double-strand DNA breaks (DSBs) u
 
 The scripts were written in R language. 
 
-To run the script, you need several R packages. To install the packages:
+To run the scripts, you need several R packages. To install the packages:
 `install.packages(c("pROC","glmnet","ranger","Matrix","gkmSVM"))` \
 `source("https://bioconductor.org/biocLite.R")` \
 `biocLite("BSgenome.Hsapiens.UCSC.hg19")` \
