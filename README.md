@@ -2,7 +2,7 @@
 
 **Overview**
 
-We devised a computational approach to predict DSBs using the epigenomic and chromatin context, but also using DNA motifs.
+We devised a computational approach to predict double-strand DNA breaks (DSBs) using the epigenomic and chromatin context, but also using DNA motifs.
 
 **Systems Requirements**
 
