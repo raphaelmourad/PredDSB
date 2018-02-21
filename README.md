@@ -41,3 +41,6 @@ Note that DSB data provided are from Lensing et al. (Nature Methods, 2016). Here
 
 **Contact**:
 raphael.mourad@ibcg.biotoul.fr
+
+**Licence**
+The source code is openly available under the Creative Commons Zero (CC0) licence.
