@@ -1,30 +1,43 @@
-# Studying 3D genome evolution using genomic sequence
+# Predicting double-strand DNA breaks using epigenome marks or DNA at kilobase resolution
+
+![alt text](https://github.com/morphos30/PredDSB/blob/master/predDSB.png)
 
 **Overview**
 
-We propose a novel approach to study the 3D genome evolution in vertebrates using the genomic sequence only, e.g. without the need for Hi-C data. The approach is simple and relies on comparing the distances between convergent and divergent CTCF motifs (ratio R).
+We devised a computational approach to predict double-strand DNA breaks (DSBs) using the epigenomic and chromatin context, but also using DNA motifs and DNA shape.
 
 **Systems Requirements**
 
 The scripts were written in R language. 
 
 To run the scripts, you need several R packages. To install the packages:
-`install.packages(c("circlize","bootstrap","phytools"))` \
+`install.packages(c("pROC","glmnet","ranger","Matrix","gkmSVM"))` \
 `source("https://bioconductor.org/biocLite.R")` \
-`biocLite("GenomicRanges")` 
+`biocLite("BSgenome.Hsapiens.UCSC.hg19")` \
+`biocLite("BSgenome.Hsapiens.UCSC.hg19.masked")` \
+`biocLite("JASPAR2016")` \
+`biocLite("TFBSTools")` \
+`biocLite("DNAshapeR")` \
+`biocLite("rtracklayer")` \
+`biocLite("Biostrings")` 
 
 **Usage**
 
-Before computing ratio R, one must use FIMO to scan for CTCF motifs. FIMO outputs a "tsv" file that is used by the "compDistFun.R" function to compute R. You can use FIMO online (http://meme-suite.org/tools/fimo), select the genome assembly and upload the CTCF MEME file "data/CTCF_meme/MA0139.1.meme".
+There are three main folders: 
+- The folder "data" contains DSB data from  Normal Human Epidermal Keratinocytes (NHEK) cells (subfolder "DSB", file "breakome_DSBcap_hg19_20kseq.bed"). Non-DSB sites are also provided in the file "breakome_DSBcap_hg19_20kseq_neg.bed". The folder also contains the epigenomic and chromatin data (subfolder "Epigenome"), precomputed DNA motif occurrence data (subfolder "Motif") and precomputed DNA shape data (subfolder "Shape"). The folder "data" also contains DSB data (subfolder "DSB_U2OS") and epigenomic and chromatin data (subfolder "Epigenome_U2OS") for Human Bone Osteosarcoma Epithelial (U2OS) cells.
+- The folder "script" contains five R scripts: "comp_shape.R" to compute DNA shape, "create_controlDSB.R" to randomly draw non-DSB sites that are similar to DSB sites, "predictDSB.R" to predict DSBs in NHEK, "predictDSBU2OS.R" to predict DSBs in U2OS and "miscFunctions.R" that includes fonctions for the main script "predictDSB.R". 
+- The folder "results" contains five subfolders: epigenome prediction results (subfolder "predEpigenome"), DNA motif prediction results (subfolder "predMotif"), DNA motif+shape prediction results (subfolder "predMotif+Shape"), NHEK epigenome model-training for U2OS predictions (subfolder "predEpigenomeForU2OS") and U2OS epigenome predictions using NHEK-trained model (subfolder "predEpigenomeU2OS"). 
 
-You can also use precomputed CTCF motifs from FIMO for selected assemblies: hg19, hg38, bosTau8, ce11, dm6, mm10, rn6 and xenTro7. These motifs are available in the folder "data/CTCF_motif".
+To predict DSBs in NHEK cells, run the R script predictDSB.R. 
 
-In this package, there are three main folders: 
-- The folder "data" contains: the CTCF motif PWM in MEME format for FIMO (subfolder "CTCF_meme"), CTCF motifs called by FIMO (subfolder "CTCF_motif"), CTCF motif DeepBind scores (subfolder "CTCF_deepbind"), CTCF motif conservation scores (subfolder "CTCF_cons"), CTCF ChIP-seq peaks from GM12878 ENCODE cells (subfolder "CTCF_peak"), 3D domain borders (subfolder "3DDomainBorder"), chromosome regions (subfolder "region"), phylogenetic tree (subfolder "tree").
-- The folder "script" contains seven R scripts: "compDistFun.R" is the function to compute R, "compute_R_species.R" to compute R in different species, "compute_R_Rp_Rc_human.R" to compute different R's in human, "compute_R_regions_human.R" to compute R for different chromosome regions, "compute_R_peak_domainBorders_human.R" to compute R at CTCF peaks and 3D domain borders, "test_differenceR_2species.R" to test the difference of R values between two species and "ancestral_R_reconstruction.R" to use ancestral R reconstruction. 
-- The folder "results" contains three subfolders: precomputed R for different species (subfolder "matPvalPM"), DNA motif prediction results (subfolder "predMotif"), precomputed distances between consecutive motifs depending on orienation (subfolder "matPM") and ancestral R reconstruction results (subfolder "phylo"). 
+To predict DSBs in U2OS cells using a NHEK-trained model, run the R script predictDSBU2OS.R. 
+
+**Information about the data**
+
+Note that DSB data provided are from Lensing et al. (Nature Methods, 2016). Here data only comprise 20.000 DSBs which are a subset of the 84.946 DSBs detected by DSBCapture in order to reduce computational burden for predictions. But, in the article, all DSB sites were used. That explains why prediction performances when using this code are lower than in the article, especially for DNA motif occurrence-based predictions, and DNA motif occurrence and DNA shape-based predictions. 
 
 **References**
+- Stefanie V. Lensing, Giovanni Marsico, Robert Hansel-Hertsch, Enid Y. Lam, David Tannahill, and Shankar Balasubramanian. DSBCapture: in situ capture and sequencing of DNA breaks. Nature Methods, 13(10):855–857, August 2016.
 
 **Contact**:
 raphael.mourad@ibcg.biotoul.fr
