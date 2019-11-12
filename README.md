@@ -41,4 +41,4 @@ Note that DSB data provided are from Lensing et al. (Nature Methods, 2016). Here
 - Stefanie V. Lensing, Giovanni Marsico, Robert Hansel-Hertsch, Enid Y. Lam, David Tannahill, and Shankar Balasubramanian. DSBCapture: in situ capture and sequencing of DNA breaks. Nature Methods, 13(10):855–857, August 2016.
 
 **Contact**:
-raphael.mourad@ibcg.biotoul.fr
+raphael.mourad@univ-tlse3.fr
